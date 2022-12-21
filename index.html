@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <header>
         <strong>Welcome to your dashboard!</strong>
     </header>
-    <section>
+    <section> <!-- Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed. -->
         <div>
             <img src="res/images/me.png" width="128" height="128" alt="My picture">
         </div>
@@ -36,57 +37,98 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>
-                    <a href="https://courses.cs.ut.ee/2022/ASD/fall"> Agile software development</a>
-                </td> 
-                <!-- I could not add link to <td></td> format, so I've inserted <a></a> where I can put the link-->
-                <td>fall</td>
-                <td>82</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>
-                    <a href="https://courses.cs.ut.ee/2022/systemsmodelling/fall">Systems modelling</a>
-                </td>
-                <td>fall</td>
-                <td>85</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>
-                    <a href="https://courses.cs.ut.ee/2022/RE/fall">Requirements Engineering</a>
-                </td>
-                <td>fall</td>
-                <td>99</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>
-                    <a href="https://courses.cs.ut.ee/2022/HCI/fall">Human Computer Interaction</a>
-                </td>
-                <td>fall</td>
-                <td>65</td>
-            </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <a href="https://courses.cs.ut.ee/2022/ASD/fall"> Agile software development</a>
+                    </td> 
+                    <!-- I could not add link to <td></td> format, so I've inserted <a></a> where I can put the link-->
+                    <td>fall</td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <a href="https://courses.cs.ut.ee/2022/systemsmodelling/fall">Systems modelling</a>
+                    </td>
+                    <td>fall</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <a href="https://courses.cs.ut.ee/2022/RE/fall">Requirements Engineering</a>
+                    </td>
+                    <td>fall</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <a href="https://courses.cs.ut.ee/2022/HCI/fall">Human Computer Interaction</a>
+                    </td>
+                    <td>fall</td>
+                    <td>65</td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr>
-                <td>The</td> <!-- Fppter of the table is <tfoot></tfoot> type-->
-                <td>End</td>
+                    <td>5</td>
+                    <td>
+                        The end
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+
                 </tr>
             </tfoot>
         </table>
+        <!-- added full form-->
+        <form>
+            <label for="courseTitleId">Course Title:</label><br> <!--The value of the for attribute of the label element must be the ID of a non-hidden form control.-->
+            <input type="text" id="courseTitleId" name="courseTitle"><br>
+            <label for="semesterId">Semester:</label><br> <!--The value of the for attribute of the label element must be the ID of a non-hidden form control.-->
+            <select name="semester" id="semesterId">
+                <option value="Spring">Spring</option>
+                <option value="Fall">Fall</option>
+            </select><br>
+            <!-- if we want radio buttons to be managed by rule "Only one can be selected", then the name="attendance" should be the same -->
+            <label style="font-weight: bold;">Attendance</label><br>
+            <input type="radio" id="attendanceVirtual" name="attendance" value="Virtual_Attendance">
+            <label for="attendanceVirtual">Virtual Attendance</label><br> <!--The value of the for attribute of the label element must be the ID of a non-hidden form control.-->
+            <input type="radio" id="attendancePhysical" name="attendance" value="Physical_Attendance">
+            <label for="attendancePhysical">Physical Attendance</label><br><!--The value of the for attribute of the label element must be the ID of a non-hidden form control.-->
+            <input type="submit" value="Submit">
+        </form>
     </section>
     <footer>
     <ul>
         <li>
-            <a href="https://ois2.ut.ee/" target="_blank">OIS</a> <!-- added target="_blank", so the link opens in new window -->
+            <a href="https://ois2.ut.ee/" target="_blank" title="ÕIS" >OIS</a> <!-- added target="_blank", so the link opens in new window -->
         </li>
         <li>
-            <a href="https://courses.cs.ut.ee/" target="_blank">Courses</a> <!-- added target="_blank", so the link opens in new window -->
+            <a href="https://courses.cs.ut.ee/" target="_blank" title="Courses page">Courses</a> <!-- added target="_blank", so the link opens in new window -->
+        </li>
+        <li>
+            <a href="mailto: aleksandra.sergeeva23@gmail.com" title="emailRequest">aleksandra.sergeeva23@gmail.com</a> <!-- added target="_blank", so the link opens in new window -->
         </li>
     </ul>
     </footer>
   </body>
 </html>
+
+<!--
+1. Check how you can show information about a link (anchor element <a href=".."> </a>) by just hovering over it.
+A1. title="........."
+2. Check how you can use the anchor element (<a href=".."> </a>) as a link to an email, i.e., 
+pressing on the anchor element will trigger the process of sending
+A2.<a href = "mailto: abc@example.com">Send Email</a>
+3.Check how you can use HTML5 to add a caption to your image (me.png).
+A3.
+4.Using Chrome Developer Tools, inspect the course wiki (https://courses.cs.ut.ee/2022/WAD/fall), 
+select the Elements tab, and try to understand how main HTML elements are used in the pages.
+A4.
+5.Using Chrome Developer Tools, go to the Lighthouse tab, and select only Accessibility from the categories. 
+Then, run Analyze page load. What percentage of accessibility did you receive? Try to read the report to better understand the result.
+A5.
+-->
